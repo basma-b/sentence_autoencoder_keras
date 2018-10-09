@@ -1,0 +1,76 @@
+Innovation in Database Management: Computer Science vs. Engineering.
+High performance prime field multiplication for GPU.
+enchanted scissors: a scissor interface for support in cutting and interactive fabrication.
+Detection of channel degradation attack by Intermediary Node in Linear Networks.
+Pinning a Complex Network through the Betweenness Centrality Strategy.
+Analysis and Design of Memoryless Interconnect Encoding Scheme.
+Dynamic bluescreens.
+A Quantitative Assured Forwarding Service.
+Automatic sanitization of social network data to prevent inference attacks.
+A &#916;&#931; IR-UWB radar with sub-mm ranging capability for human body monitoring systems.
+Architecture of a multi-slot main memory system for 3.2 Gbps operation.
+Rule-based Service Customization via Houdini.
+Business Policy Modeling and Enforcement in Databases.
+A high speed and high linearity OTA in 1-V power supply voltage.
+PREDIcT: Towards Predicting the Runtime of Large Scale Iterative Analytics.
+SocialSensor: sensing user generated input for improved media discovery and experience.
+Parametric keyframe interpolation incorporating kinetic adjustment and phrasing control.
+An Explanation for Unexpected 802.11 Outdoor Link-level Measurement Results.
+Hot Block Clustering for Disk Arrays with Dynamic Striping.
+Analysis of propagation delay in 3 - D stacked DRAM.
+ISHair: importance sampling for hair scattering.
+Green Wave: Latency and Capacity-Efficient Sleep Scheduling for Wireless Networks.
+Exploiting innocuous activity for correlating users across sites.
+Optimized numerical mapping scheme for filter-based exon location in DNA using a quasi-Newton algorithm.
+Nyquist criterion based design of continuous time Sigma Delta modulators.
+Fast Transient Simulation of Lossy Transmission Lines.
+Image sensor with focal plane polarization sensitivity.
+Power-oriented delay budgeting for combinational circuits.
+Sensor Network Navigation without Locations.
+Simplified logic design methodology for fuzzy membership function based robust detection of maternal modulus maxima location: A low complexity Fetal ECG extraction architecture for mobile health monitoring systems.
+E-V: Efficient visual surveillance with electronic footprints.
+Analysis of Price Competition in a Slotted Resource Allocation Game.
+A language for shading and lighting calculations.
+Integration of Streaming and Elastic Traffic in Wireless Networks.
+MATE: MPLS Adaptive Traffic Engineering.
+Surround-screen projection-based virtual reality: the design and implementation of the CAVE.
+Output Characteristics of Class E Amplifier With Nonlinear Shunt Capacitance Versus Supply Voltage.
+Predicting reflectance functions from complex surfaces.
+ActionView: a Movement-analysis Ambulatory Monitor in Elderly Homecare Systems.
+Live demonstration: Packet-based AER with 3Gevent/s cumulative throughput.
+Adaptive electricity scheduling in microgrids.
+Design of a 64-bit Low-energy High-performance Adder using Dynamic Feedthrough Logic.
+Minimax Design of IIR Digital Filters using SDP Relaxation Technique.
+Propagation and Reflection of Phase Differences on a Lattice of Coupled Oscillators.
+Query Optimization in the Presence of Foreign Functions.
+Parallelizing query optimization.
+Optimizing the Topology of Bluetooth Wireless Personal Area Networks.
+A Scalable Algorithm for Maximizing Range Sum in Spatial Databases.
+Coexistence and Transformation of Data.
+Power transfer networks at RF frequencies: new design procedures with implementation roadmap.
+A distributed amplifier based dispersive delay line.
+High-speed front end for LED-Photodiode based fluorescence lifetime measurement system.
+Simple sybil-proof mechanisms for multi-level marketing.
+Rants: a framework for rank editing and sharing in web search.
+Mobile search pattern evolution: the trend and the impact of voice queries.
+Data summaries for on-demand queries over linked data.
+Compressive sampling of EMG bio-signals.
+Anthropocentric Data Systems.
+Estimating clustering coefficients and size of social networks via random walk.
+CALMS: Cloud-assisted live media streaming for globalized demands with time/region diversities.
+Quadrature generation techniques for frequency multiplication based oscillators.
+Topology design for fast convergence of network consensus algorithms.
+Analysis of power supply gain of CMOS bandgap references.
+A Scalable Method for Access Control in Location-Based Broadcast Services.
+A novel Fisher discriminant for biometrics recognition: 2DPCA plus 2DFLD.
+A framework for benchmarking entity-annotation systems.
+A physically based approach to 2-D shape blending.
+Effects of the recession on public mood in the UK.
+GIO: a semantic web application using the information grid framework.
+Maximum likelihood disjunctive decomposition to reduced multirooted DAG for FIR filter design.
+SocioCrowd: a social-network-based framework for crowd simulation.
+A MATLAB based optimum multiband FIR filters design program following the original idea of the Remez multiple exchange algorithm.
+Touchy.Internet: a cybernetics system for human-pet interaction through the Internet.
+Social status and role analysis of palin's email network.
+A fast hash tree generator for Merkle signature scheme.
+GPU Powered Artificial Immune System for Visual Applications.
