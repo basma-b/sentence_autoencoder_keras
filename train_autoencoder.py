@@ -15,22 +15,6 @@ from keras.preprocessing.sequence import pad_sequences
 from sklearn import preprocessing
 import os
 from keras import backend as K
-from scipy.spatial.distance import cdist
-
-
-def cos_distance(y_true, y_pred):
-    y_true = K.l2_normalize(y_true, axis=-1)
-    y_pred = K.l2_normalize(y_pred, axis=-1)
-    return K.mean(1 - K.sum((y_true * y_pred), axis=-1))
-
-
-def compute_cosine_similarity(x, y):
-    return np.dot(x, y) / (np.linalg.norm(x, 2) * np.linalg.norm(y, 2))
-
-
-def clean_text(text):
-    text = text.lower()
-    return text
 
 def main():
     
@@ -71,7 +55,7 @@ def main():
     
     # loading the input parameters
     
-    MAX_SEQUENCE_LENGTH, MAX_NB_WORDS, word_index = pickle.load(open(args.input_dir + 'params_subtask_2.pkl', 'rb'))
+    MAX_SEQUENCE_LENGTH, MAX_NB_WORDS, word_index = pickle.load(open(args.input_params, 'rb'))
     
     print("MAX_SEQUENCE_LENGTH: {}".format(MAX_SEQUENCE_LENGTH))
     print("MAX_NB_WORDS: {}".format(MAX_NB_WORDS))
@@ -88,6 +72,7 @@ def main():
         embedding_vector = embeddings_index.get(word)
         
         if embedding_vector is not None:
+            # we normalize word embedding vectors 
             embedding_matrix[i] = [float(x)/maximum for x in embedding_vector] #embedding_vector
         else:
             embedding_matrix[i] = np.random.normal(-0.25, 0.25, args.emb_dim)
@@ -108,7 +93,7 @@ def main():
     
     print("Now loading data...")
     
-    sequences = pickle.load(open(args.input_dir + 'subtask_2_candidates.tsv.pkl', 'rb'))
+    sequences = pickle.load(open(args.input_data, 'rb'))
     print(sequences.shape)
     
     # we need to represent every input sequence using word embeddings
