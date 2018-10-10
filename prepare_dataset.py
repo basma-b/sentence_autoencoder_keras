@@ -83,7 +83,7 @@ def main():
     
     embedding_size = len(embeddings_index.values()[0])
     
-    maximum = 4.0
+    maximum = max(max(v) for v in embeddings_index.values()) # we'll use the max value of the embeddings to normalize every word embedding vector
     
     print("Now constructing embedding matrix...")
     
@@ -96,7 +96,7 @@ def main():
         
         if embedding_vector is not None:
             # we normalize word embedding vectors 
-            embedding_matrix[i] = [float(x)/maximum for x in embedding_vector] #embedding_vector
+            embedding_matrix[i] = [float(x)/maximum for x in embedding_vector] #normalize the embedding_vector
         else:
             embedding_matrix[i] = np.random.normal(-0.25, 0.25, embedding_size)
             
