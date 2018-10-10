@@ -18,19 +18,8 @@ from keras import backend as K
 from scipy.spatial.distance import cdist
 
 
-def cos_distance(y_true, y_pred):
-    y_true = K.l2_normalize(y_true, axis=-1)
-    y_pred = K.l2_normalize(y_pred, axis=-1)
-    return K.mean(1 - K.sum((y_true * y_pred), axis=-1))
-
-
-def compute_cosine_similarity(x, y):
+def cosine_similarity(x, y):
     return np.dot(x, y) / (np.linalg.norm(x, 2) * np.linalg.norm(y, 2))
-
-
-def clean_text(text):
-    text = text.lower()
-    return text
 
 def main():
     
@@ -43,6 +32,7 @@ def main():
     parser.add_argument('--optimizer', type=str, default='adam', help='Optimizer')
     parser.add_argument('--input_data', type=str, default='data/input.pkl', help='Input data')
     parser.add_argument('--input_params', type=str, default='data/params.pkl', help='Input paramaters')
+    parser.add_argument('--output_data', type=str, default='data/output.pkl', help='Output data')
     parser.add_argument('--model_fname', type=str, default='models/autoencoder.h5', help='Model filename')
     parser.add_argument('--embedding_file', type=str, default='embeddings/glove.840B.300d.txt', help='Embedding filename')
     parser.add_argument('--seed', type=int, default=1337, help='Random seed')
@@ -126,11 +116,11 @@ def main():
     
     # Compute the cosine similarity between the 
     for rid in range(Xvec.shape[0]):
-        cosims[rid] = compute_cosine_similarity(Xvec[rid], Yvec[rid])
+        cosims[rid] = cosine_similarity(Xvec[rid], Yvec[rid])
     
-    print(np.mean(cosims))
+    print("The average cosine similarity is ", np.mean(cosims))
     
-    pickle.dump(Xvec, open(args.input_dir + "encoded_responses.pkl", "wb"))
+    pickle.dump(Xvec, open(args.output_data, "wb"))
     
 if __name__ == "__main__":
     main()
