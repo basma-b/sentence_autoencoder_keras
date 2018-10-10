@@ -19,11 +19,10 @@ import sys
 # transforms a csv file to pkl
 
 def clean_text (text):
-    
     text = text.lower()
     return text
 
-def build_data(csv_file):
+def load_data(filename):
     train = pd.read_csv(csv_file)
     rows = train.shape[0]
     context = []
@@ -44,12 +43,6 @@ def main():
     # loading train data
     train_c, train_r, train_l = build_data(train_file)   
     print("Finish train")
-    # loading dev data
-    dev_c, dev_r, dev_l = build_data(dev_file)
-    print("Finish dev")
-    # loading test data
-    test_c, test_r = build_data_test(test_file)
-    print("Finish test")
 
     
     tokenizer = Tokenizer()
