@@ -12,4 +12,4 @@ First:
         python prepare_dataset.py ~/udc_coherence/dual_encoder_udc/embeddings/glove.840B.300d.txt  data/params data/reviews.csv
 Training the model
 
-python train_autoencoder.py --input_data data/reviews.csv.pkl --input_params data/params.pkl --model_fname models/autoencoder.h5
+python train_autoencoder.py --seq_length 100 --n_epochs 100 --optimizer adam --input_data data/reviews.csv.pkl --model_fname models/autoencoder.h5 --n_epochs 100

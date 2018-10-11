@@ -6,7 +6,7 @@ import pickle
 import keras
 from keras.utils import *
 from keras.layers import *
-from keras.models *
+from keras.models import  *
 from keras.callbacks import ModelCheckpoint
 from utilities import my_callbacks
 import argparse
@@ -25,11 +25,6 @@ def main():
     
     parser = argparse.ArgumentParser()
     parser.register('type','bool',str2bool)
-    parser.add_argument('--emb_dim', type=str, default=300, help='Embeddings dimension')
-    parser.add_argument('--hidden_size', type=int, default=300, help='Hidden size')
-    parser.add_argument('--batch_size', type=int, default=256, help='Batch size')
-    parser.add_argument('--n_epochs', type=int, default=100, help='Num epochs')
-    parser.add_argument('--optimizer', type=str, default='adam', help='Optimizer')
     parser.add_argument('--input_data', type=str, default='data/input.pkl', help='Input data')
     parser.add_argument('--output_data', type=str, default='data/output.pkl', help='Output data')
     parser.add_argument('--model_fname', type=str, default='models/autoencoder.h5', help='Model filename')
