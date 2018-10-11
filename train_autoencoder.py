@@ -10,7 +10,6 @@ from keras.models import *
 from keras.callbacks import ModelCheckpoint
 import argparse
 from keras.preprocessing.sequence import pad_sequences
-from sklearn import preprocessing
 import os
 
 def str2bool(v):
@@ -39,7 +38,7 @@ def main():
     
     print("Now building the autoencoder...")
     
-    # the inputs should be already embedded
+    # the inputs should be already embedded ==> check prepare_dataset.py for further information
     embedded_inputs = Input(shape=(args.seq_length, args.emb_dim))
     encoded_inputs = LSTM(args.hidden_size, name="encoder")(embedded_inputs)
     
@@ -60,7 +59,7 @@ def main():
     
     print("Now training the model...")
     
-    # we save the autoencoder model during the training
+    # we automatically save the best autoencoder model during the training
     checkpoint = ModelCheckpoint(filepath=args.model_fname, save_best_only=True)
                 
     autoencoder.fit(sequences, sequences,

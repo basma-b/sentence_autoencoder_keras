@@ -10,7 +10,6 @@ from keras.models import *
 from keras.callbacks import ModelCheckpoint
 import argparse
 from keras.preprocessing.sequence import pad_sequences
-from sklearn import preprocessing
 import os
 
 def str2bool(v):
@@ -41,9 +40,12 @@ def main():
     
     print("Now loading the autoencoder...")
     autoencoder = load_model(args.model_fname)
-    
+    # we extract onmy the encoder from the autoencoder
     encoder = Model(autoencoder.input, autoencoder.get_layer("encoder").output)
-
+    
+    # the idea is that suppose xtest should be similar to ytest
+    # To verify that, we have to compare the Xvec and Yvec, the more similar they're the more our autoencoder is good.
+    
     xtest = sequences
     ytest = autoencoder.predict(xtest)
     
@@ -56,8 +58,11 @@ def main():
     for rid in range(Xvec.shape[0]):
         cosims[rid] = cosine_similarity(Xvec[rid], Yvec[rid])
     
-    print("The average cosine similarity is ", np.mean(cosims))
+    # here the similarity is around 99% which is excellent and we can use our autoencoder/encoder for other tasks
+    print("The average cosine similarities between all the sequences is ", np.mean(cosims))
     
+    # now we dump the sequence vectors, we can use them later in case we need pre-encoder sequences
+    # usually we dump the encoder also in case we need to produce sequence vectors for new sequences using this pre-trained encoder
     pickle.dump(Xvec, open(args.output_data, "wb"))
     
 if __name__ == "__main__":
