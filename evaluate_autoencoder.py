@@ -13,6 +13,8 @@ from keras.preprocessing.sequence import pad_sequences
 from sklearn import preprocessing
 import os
 
+def str2bool(v):
+    return v.lower() in ("yes", "true", "t", "1")
 
 def cosine_similarity(x, y):
     return np.dot(x, y) / (np.linalg.norm(x, 2) * np.linalg.norm(y, 2))
