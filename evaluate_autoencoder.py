@@ -6,16 +6,12 @@ import pickle
 import keras
 from keras.utils import *
 from keras.layers import *
-from keras.models import  *
+from keras.models import *
 from keras.callbacks import ModelCheckpoint
-from utilities import my_callbacks
 import argparse
-from utilities.data_helper import *
 from keras.preprocessing.sequence import pad_sequences
 from sklearn import preprocessing
 import os
-from keras import backend as K
-from scipy.spatial.distance import cdist
 
 
 def cosine_similarity(x, y):
