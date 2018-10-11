@@ -27,13 +27,13 @@ def clean_text(text):
 
 def load_data(filename):
     rows = pd.read_csv(filename, keep_default_na=False)
-    sentences = []
+    sequences = []
     
     for i in range(rows.shape[0]):
         text = rows.loc[i].ReviewText
         if text != "":
-            sentences.append(clean_text(text))
-    return sentences
+            sequences.append(clean_text(text))
+    return sequences
 
 def main():
     
@@ -42,15 +42,15 @@ def main():
     input_file = sys.argv[3]
 
     # loading the data
-    sentences = load_data(input_file)   
+    sequences = load_data(input_file)   
     print("Data loaded")
     
     #tokenizer = Tokenizer()
     tokenizer = Tokenizer(5000) # we keep the 5000 most frequent words of our vocabulary
     
-    tokenizer.fit_on_texts(sentences)
+    tokenizer.fit_on_texts(sequences)
 
-    #MAX_SEQUENCE_LENGTH = max([len(seq) for seq in sentences])
+    #MAX_SEQUENCE_LENGTH = max([len(seq) for seq in sequences])
     #print(MAX_SEQUENCE_LENGTH)
     MAX_SEQUENCE_LENGTH = 100 # we keep the last 100 words of every sentence
 
@@ -62,8 +62,8 @@ def main():
     print("MAX_SEQUENCE_LENGTH: {}".format(MAX_SEQUENCE_LENGTH))
     print("MAX_NB_WORDS: {}".format(MAX_NB_WORDS))
     
-    sentences = tokenizer.texts_to_sequences(sentences)
-    sentences = pad_sequences(sentences, maxlen=MAX_SEQUENCE_LENGTH)
+    sequences = tokenizer.texts_to_sequences(sequences)
+    sequences = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
     
     # loading the embedding file
     
@@ -101,20 +101,19 @@ def main():
             embedding_matrix[i] = np.random.normal(-0.25, 0.25, embedding_size)
             
     # we need to represent every input sequence using word embeddings
-    temp = np.zeros((sentences.shape[0], MAX_SEQUENCE_LENGTH, embedding_size))
-    for i in range(sentences.shape[0]):
+    temp = np.zeros((sequences.shape[0], MAX_SEQUENCE_LENGTH, embedding_size))
+    for i in range(sequences.shape[0]):
         # for each sequence
         for j in range(MAX_SEQUENCE_LENGTH):
             # for each word of the sequence, get it embedding vector from the embedding matrix
-            temp[i][j] = embedding_matrix[sentences[i][j]]
+            temp[i][j] = embedding_matrix[sequences[i][j]]
             
     
-    sentences = temp
-    print(sentences.shape)
+    sequences = temp
+    print(sequences.shape)
     
     print("Now dumping")
-
-    pickle.dump(sentences, open(input_file + ".pkl", "wb"))
+    pickle.dump(sequences, open(input_file + ".pkl", "wb"))
     
 if __name__ == '__main__':
     main()
