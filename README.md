@@ -26,6 +26,6 @@ python train_autoencoder.py --seq_length 100 --n_epochs 100 --optimizer adam --i
 
 # Materials
 
-- [Building Autoencoders in Keras] (https://blog.keras.io/building-autoencoders-in-keras.html)
-- [Keras autoencoder example — sentence vectors] (https://www.safaribooksonline.com/library/view/deep-learning-with/9781787128422/ee2fe540-56ff-4d05-b2f2-4e1e35b9d47f.xhtml)
-- [Implementing Autoencoders in Keras: Tutorial] (https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial)
+- [Building Autoencoders in Keras](https://blog.keras.io/building-autoencoders-in-keras.html)
+- [Keras autoencoder example — sentence vectors](https://www.safaribooksonline.com/library/view/deep-learning-with/9781787128422/ee2fe540-56ff-4d05-b2f2-4e1e35b9d47f.xhtml)
+- [Implementing Autoencoders in Keras: Tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial)
