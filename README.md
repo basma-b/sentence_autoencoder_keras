@@ -9,4 +9,7 @@ I downloaded a toy dataset from https://www.kaggle.com/nicapotato/womens-ecommer
 
 First:
     Preprocessing of data
-        
+        python prepare_dataset.py ~/udc_coherence/dual_encoder_udc/embeddings/glove.840B.300d.txt  data/params data/reviews.csv
+Training the model
+
+python train_autoencoder.py --input_data data/reviews.csv.pkl --input_params data/params.pkl --model_fname models/autoencoder.h5

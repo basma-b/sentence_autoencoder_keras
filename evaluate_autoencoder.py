@@ -31,7 +31,6 @@ def main():
     parser.add_argument('--n_epochs', type=int, default=100, help='Num epochs')
     parser.add_argument('--optimizer', type=str, default='adam', help='Optimizer')
     parser.add_argument('--input_data', type=str, default='data/input.pkl', help='Input data')
-    parser.add_argument('--input_params', type=str, default='data/params.pkl', help='Input paramaters')
     parser.add_argument('--output_data', type=str, default='data/output.pkl', help='Output data')
     parser.add_argument('--model_fname', type=str, default='models/autoencoder.h5', help='Model filename')
     parser.add_argument('--seed', type=int, default=1337, help='Random seed')

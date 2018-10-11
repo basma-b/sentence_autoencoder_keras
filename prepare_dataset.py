@@ -115,7 +115,6 @@ def main():
     print("Now dumping")
 
     pickle.dump(sentences, open(input_file + ".pkl", "wb"))
-    pickle.dump([MAX_SEQUENCE_LENGTH, MAX_NB_WORDS, word_index], open(param_file + ".pkl", "wb"))
     
 if __name__ == '__main__':
     main()
